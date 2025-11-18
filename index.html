@@ -3,19 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <meta name="description" content="Modern QR Code Generator - Create custom QR codes instantly with beautiful design">
+    <meta name="theme-color" content="#001F3F">
+    <title>QR Code Generator | ShifoSan</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Effects -->
+    <div class="starfield"></div>
+    <div class="grid-background"></div>
+    
+    <!-- Main Container -->
     <div class="main-container">
-        <h1>QR Code Generator</h1>
-        <div class="qr-input-area">
-            <input type="text" id="qrInput" placeholder="Enter text or URL...">
-            <button id="generateBtn">Generate QR</button>
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">⚡</span>
+                QR Code Generator
+            </h1>
+            <p class="subtitle">Create stunning QR codes instantly</p>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-group">
+                <label for="qrInput" class="input-label">Enter Text or URL</label>
+                <input 
+                    type="text" 
+                    id="qrInput" 
+                    class="input-field"
+                    placeholder="https://example.com or any text..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Options Panel -->
+            <div class="options-panel">
+                <div class="option-group">
+                    <label for="qrSize" class="option-label">Size</label>
+                    <select id="qrSize" class="option-select">
+                        <option value="200">Small (200px)</option>
+                        <option value="300" selected>Medium (300px)</option>
+                        <option value="400">Large (400px)</option>
+                        <option value="500">X-Large (500px)</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label for="qrColor" class="option-label">QR Color</label>
+                    <input type="color" id="qrColor" class="option-color" value="#6b73f2">
+                </div>
+
+                <div class="option-group">
+                    <label for="qrBgColor" class="option-label">Background</label>
+                    <input type="color" id="qrBgColor" class="option-color" value="#1a1d3a">
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button id="generateBtn" class="generate-btn">
+                <span class="btn-icon">🔮</span>
+                Generate QR Code
+            </button>
         </div>
-        <div id="qrResult"></div>
+
+        <!-- Result Section -->
+        <div id="qrResult" class="qr-result">
+            <div class="placeholder">
+                <div class="placeholder-icon">📱</div>
+                <p>Your QR code will appear here</p>
+            </div>
+        </div>
+
+        <!-- Download Button (Hidden by default) -->
+        <button id="downloadBtn" class="download-btn hidden">
+            <span class="btn-icon">⬇️</span>
+            Download QR Code
+        </button>
+
+        <!-- Stats Display -->
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-value" id="qrCount">0</span>
+                <span class="stat-label">Generated</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="charCount">0</span>
+                <span class="stat-label">Characters</span>
+            </div>
+        </div>
     </div>
-    <footer>Made by ShifoSan</footer>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Crafted with 💜 by <span class="creator">ShifoSan</span></p>
+        <p class="footer-tagline">Making the digital world more accessible</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
